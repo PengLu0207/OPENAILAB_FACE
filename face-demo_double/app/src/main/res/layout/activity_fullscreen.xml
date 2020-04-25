@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0099cc"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.FullscreenActivity">
+
+    <FrameLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true">
+
+        <com.openailab.facetrack.widget.CameraSurfaceView
+            android:visibility="visible"
+            android:id="@+id/rView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cameraType="1"/>
+
+        <com.openailab.facetrack.widget.CameraSurfaceView
+            android:id="@+id/gView"
+            android:layout_gravity="end"
+            android:layout_margin="10dp"
+            android:layout_width="108dp"
+            android:layout_height="192dp"
+            app:cameraType="0"/>
+
+        <com.openailab.facetrack.widget.InfoView
+            android:id="@+id/infoView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.openailab.facetrack.widget.RectView
+            android:id="@+id/rectView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:id="@+id/fullscreen_content_controls"
+            style="?metaButtonBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="@color/black_overlay"
+            android:orientation="horizontal"
+            tools:ignore="UselessParent">
+
+            <Button
+                android:id="@+id/register"
+                style="?metaButtonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="注册" />
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <TextView
+            android:id="@+id/authStatusText"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="鉴权状态:"/>
+
+</RelativeLayout>

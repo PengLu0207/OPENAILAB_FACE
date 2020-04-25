@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.openailab.sdkdemo.MainActivity">
+
+    <FrameLayout
+            android:id="@+id/linelayout2"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_horizontal"
+        android:layout_weight="10"
+        android:background="@color/black">
+
+
+            <SurfaceView
+                android:id="@+id/backView"
+                android:layout_width="fill_parent"
+                android:layout_height="650dp"
+                android:layout_gravity="center" />
+
+        <SurfaceView
+            android:id="@+id/frontView"
+            android:layout_width="fill_parent"
+            android:layout_height="650dp"
+            android:layout_gravity="center" />
+
+        <com.openailab.sdkdemo.myDrawRectView
+            android:id="@+id/mipi_preview_content"
+            android:layout_width="fill_parent"
+            android:layout_height="650dp"
+            android:layout_gravity="center" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/calibrateBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="点击摄像头校准"
+                android:textColor="@color/blue_d"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="点击图像人脸注册"
+                android:textColor="@color/blue"
+                android:textSize="40sp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/calibrateLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparent_gray"
+            android:clickable="false"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="200dp"
+                    android:gravity="center"
+                    android:text="正在校准摄像头"
+                    android:textColor="@color/lightBlue"
+                    android:textSize="60sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="注意：请将一张人脸靠近摄像头，多张人脸将导致校准失败！"
+                    android:textColor="@android:color/holo_red_light"
+                    android:textSize="28sp" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/calibrateNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10"
+                    android:textColor="@color/lightGreen"
+                    android:textSize="350sp" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        </FrameLayout>
+</RelativeLayout>
